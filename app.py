@@ -7,6 +7,7 @@ from views import (
     data_explorer,
     layout_lab,
     playground,
+    rag_lab,
     visualization_lab,
 )
 
@@ -41,6 +42,12 @@ pages = {
             title="AI Chat",
             icon=":material/chat:",
             url_path="chat",
+        ),
+        st.Page(
+            rag_lab.render,
+            title="RAG Lab",
+            icon=":material/manage_search:",
+            url_path="rag",
         ),
     ],
     "Examples": [

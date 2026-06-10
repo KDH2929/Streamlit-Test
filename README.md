@@ -10,4 +10,5 @@ streamlit run app.py
 
 ```env
 OPENAI_API_KEY=API_KEY
+COHERE_API_KEY=API_KEY
 ```

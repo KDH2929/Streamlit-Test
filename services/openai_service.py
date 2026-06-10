@@ -8,15 +8,19 @@ from openai import OpenAI
 DEFAULT_MODEL = "gpt-5-nano"
 
 
-def get_api_key() -> str | None:
+def get_secret(name: str) -> str | None:
     load_dotenv()
 
     try:
-        secret_key = st.secrets.get("OPENAI_API_KEY")
+        secret_value = st.secrets.get(name)
     except FileNotFoundError:
-        secret_key = None
+        secret_value = None
 
-    return secret_key or os.getenv("OPENAI_API_KEY")
+    return secret_value or os.getenv(name)
+
+
+def get_api_key() -> str | None:
+    return get_secret("OPENAI_API_KEY")
 
 
 def create_response(
