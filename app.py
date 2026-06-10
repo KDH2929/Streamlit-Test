@@ -1,7 +1,14 @@
 import streamlit as st
 
 from components.layout import apply_global_styles, render_sidebar
-from views import chat, dashboard, data_explorer, playground
+from views import (
+    chat,
+    dashboard,
+    data_explorer,
+    layout_lab,
+    playground,
+    visualization_lab,
+)
 
 
 st.set_page_config(
@@ -37,6 +44,18 @@ pages = {
         ),
     ],
     "Examples": [
+        st.Page(
+            visualization_lab.render,
+            title="Visualization Lab",
+            icon=":material/insert_chart:",
+            url_path="visualization",
+        ),
+        st.Page(
+            layout_lab.render,
+            title="Layout Lab",
+            icon=":material/view_quilt:",
+            url_path="layout",
+        ),
         st.Page(
             playground.render,
             title="UI Playground",
