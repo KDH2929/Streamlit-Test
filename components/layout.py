@@ -13,8 +13,13 @@ def apply_global_styles() -> None:
         <style>
         .block-container {
             max-width: 1180px;
-            padding-top: 2rem;
+            padding-top: 4.5rem;
             padding-bottom: 3rem;
+        }
+        @media (max-width: 640px) {
+            .block-container {
+                padding-top: 5rem;
+            }
         }
         [data-testid="stMetric"] {
             background: color-mix(in srgb, var(--primary-color) 8%, transparent);
