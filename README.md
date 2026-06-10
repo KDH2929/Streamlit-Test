@@ -6,6 +6,7 @@
 .\.venv\Scripts\Activate.ps1
 pip install -r requirements.txt
 streamlit run app.py
+streamlit run simple_rag_app.py
 ```
 
 ```env
